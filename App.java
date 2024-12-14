@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        System.out.println("hello world!!");
         Livro listaDeLivros[] = new Livro[100];
 
         int contadorDeLivros = 0;
@@ -37,9 +36,6 @@ public class App {
                     listaDeLivros[contadorDeLivros] = livro;
                     contadorDeLivros++;
 
-                    for (int i = 0; i < contadorDeLivros; i++) {
-                        System.out.println(listaDeLivros[i]);
-                    }
                     break;
 
                 case "2":
@@ -119,7 +115,6 @@ public class App {
                     System.exit(0);
                     break;
                 default:
-                    System.out.println("Opção inválida");
                     break;
             }
         }
