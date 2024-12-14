@@ -13,7 +13,7 @@ public class App {
         // Livro livro = new Livro("Antoine de Saint-Exupéry", "O Pequeno Príncipe",
         // "Gallimard", 1943);
 
-        Usuario pessoa = new Usuario("Alexa", "09789213432", "aTalDaGatinha1234@gmail.com");
+        Usuario pessoa = new Usuario("Alexa", "09789213432", "teste@gmail.com");
 
         Scanner scanner = new Scanner(System.in);
 
@@ -75,6 +75,7 @@ public class App {
                     }
 
                     break;
+
                 case "4":
                     System.out.println("Mostrando emprestimos");
                     for (Emprestimo emp : pessoa.getHistoricoEmprestimos()) {
