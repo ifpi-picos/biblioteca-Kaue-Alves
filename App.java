@@ -23,25 +23,26 @@ public class App {
 
             switch (op) {
                 case "1":
-                    System.out.println("Digite o titulo do livro");
+                    System.out.println("Digite o titulo do livro: ");
                     String titulo = scanner.nextLine();
-                    System.out.println("Digite o autor do livro");
+                    System.out.println("Digite o autor do livro: ");
                     String autor = scanner.nextLine();
-                    System.out.println("Digite a editora do livro");
+                    System.out.println("Digite a editora do livro: ");
                     String editora = scanner.nextLine();
-                    System.out.println("Digite o ano do livro");
+                    System.out.println("Digite o ano do livro: ");
                     int ano = scanner.nextInt();
                     Livro livro = new Livro(titulo, autor, editora, ano);
 
                     listaDeLivros[contadorDeLivros] = livro;
                     contadorDeLivros++;
 
+                    System.out.println("Livro cadastrado com sucesso!");
                     break;
 
                 case "2":
 
                     for (int i = 0; i < contadorDeLivros; i++) {
-                        System.out.println("Titulo: " + listaDeLivros[i].getTitulo() + " Autor: "
+                        System.out.println((i+1) + " - Titulo: " + listaDeLivros[i].getTitulo() + " Autor: "
                                 + listaDeLivros[i].getAutor() + " Editora: " + listaDeLivros[i].getEditora() + " Ano: "
                                 + listaDeLivros[i].getAno());
                     }
@@ -49,8 +50,9 @@ public class App {
                     break;
 
                 case "3":
-                    System.out.println("Livros emprestados: \n\n");
+                    System.out.println("Livros emprestados: \n");
 
+                    
                     for (int i = 0; i < contadorDeLivros; i++) {
                         if (listaDeLivros[i].getEmprestado() == true) {
                             System.out.println("Titulo: " + listaDeLivros[i].getTitulo() + " Autor: "
@@ -60,7 +62,7 @@ public class App {
                         }
                     }
 
-                    System.out.println("Livros disponíveis: \n\n");
+                    System.out.println("Livros disponíveis: \n");
                     for (int i = 0; i < contadorDeLivros; i++) {
                         if (listaDeLivros[i].getEmprestado() == false) {
                             System.out.println("Titulo: " + listaDeLivros[i].getTitulo() + " Autor: "
@@ -73,7 +75,7 @@ public class App {
                     break;
 
                 case "4":
-                    System.out.println("Mostrando emprestimos");
+                    System.out.println("Mostrando emprestimos: ");
                     for (Emprestimo emp : pessoa.getHistoricoEmprestimos()) {
                         System.out.println("Data emprestimo: " + emp.getDataEmprestimo() + " Data devolução: "
                                 + emp.getDataDevolucao());
@@ -99,7 +101,7 @@ public class App {
                     break;
 
                 case "6":
-                    System.out.println("Digite o titulo do livro que deseja devolver");
+                    System.out.println("Digite o titulo do livro que deseja devolver: ");
                     String tituloLivroParaDevolver = scanner.nextLine();
 
                     for (int i = 0; i < contadorDeLivros; i++) {
