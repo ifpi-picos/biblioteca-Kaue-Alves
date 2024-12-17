@@ -3,10 +3,14 @@ package dominios;
 public class Emprestimo {
     private String dataEmprestimo;
     private String dataDevolucao;
+    private Livro livro;
+    private Usuario usuario;
 
-    public Emprestimo(String dataDevolucao) {
+    public Emprestimo(String dataDevolucao, Livro livro, Usuario usuario) {
         this.dataEmprestimo = new java.util.Date().toString();
         this.dataDevolucao = dataDevolucao;
+        this.livro = livro;
+        this.usuario = usuario;
     }
 
     public String getDataEmprestimo() {
@@ -25,7 +29,15 @@ public class Emprestimo {
         this.dataDevolucao = dataDevolucao;
     }
 
-    public void realizarEmprestimo(Livro livro, Usuario usuario) {
+    public Livro getLivro() {
+        return livro;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void realizarEmprestimo() {
         if (livro.getEmprestado()) {
             System.out.println("Livro já emprestado");
         } else {
@@ -33,5 +45,4 @@ public class Emprestimo {
             System.out.println("Livro emprestado com sucesso");
         }
     }
-
 }

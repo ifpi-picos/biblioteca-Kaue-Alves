@@ -7,6 +7,7 @@ public class Usuario {
     private String nome;
     private String cpf;
     private String email;
+    
     private List<Emprestimo> historicoEmprestimos = new ArrayList<>();
 
     public Usuario(String nome, String cpf, String email) {
